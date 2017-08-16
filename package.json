@@ -1,0 +1,49 @@
+{
+  "name": "formsy-react-native",
+  "version": "0.0.0",
+  "description": "A form input builder and validator for React-Native (based on formsy-react)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/track0x1/formsy-react-native.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "formsy",
+    "form",
+    "validator"
+  ],
+  "author": "Tom Beute <beute.thomas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/track0x1/formsy-react-native/issues"
+  },
+  "homepage": "https://github.com/track0x1/formsy-react-native#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-preset-react-native": "^3.0.0",
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "^7.2.1",
+    "prop-types": "^15.5.10",
+    "react": "next",
+    "react-native": "^0.47.1"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.10",
+    "react": "next",
+    "react-native": "^0.47.1"
+  }
+}
