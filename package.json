@@ -1,8 +1,8 @@
 {
   "name": "formsy-react-native",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A form input builder and validator for React-Native (based on formsy-react)",
-  "main": "index.js",
+  "main": "src/index.js",
   "directories": {
     "doc": "docs",
     "example": "examples",
@@ -43,7 +43,7 @@
   },
   "peerDependencies": {
     "prop-types": "^15.5.10",
-    "react": "next",
-    "react-native": "^0.47.1"
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.46.1"
   }
 }
