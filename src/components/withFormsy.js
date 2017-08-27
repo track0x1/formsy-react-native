@@ -8,10 +8,10 @@ function withFormsy(Component) {
 
     static propTypes = {
       value: PropTypes.string,
-      validations: PropTypes,
-      required: PropTypes,
-      name: PropTypes,
-      innerRef: PropTypes,
+      validations: PropTypes.oneOfType(PropTypes.string, PropTypes.object),
+      required: PropTypes.bool,
+      name: PropTypes.string.isRequired,
+      innerRef: PropTypes.oneOfType(PropTypes.func, PropTypes.string),
     };
 
     static contextTypes = {
