@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { utils } from '../utils';
 import validationRules from '../validationRules';
-// import formDataToObject from 'form-data-to-object';
-// const formDataToObject = {};
-
 
 class Formsy extends React.Component {
   static displayName = 'Formsy.Form'
@@ -58,6 +55,8 @@ class Formsy extends React.Component {
         validate: this.validate,
         isFormDisabled: this.isFormDisabled,
         isValidValue: (component, value) => this.runValidation(component, value).isValid,
+        submit: this.submit,
+        reset: this.reset,
       },
     };
   }
@@ -119,15 +118,15 @@ class Formsy extends React.Component {
 
   setFormPristine = (isPristine) => {
     this.setState({
-      _formSubmitted: !isPristine,
+      formSubmitted: !isPristine,
     });
 
     // Iterate through each component and set it as pristine
     // or "dirty".
     this.inputs.forEach((component) => {
       component.setState({
-        _formSubmitted: !isPristine,
-        _isPristine: isPristine,
+        formSubmitted: !isPristine,
+        isPristine,
       });
     });
   }
@@ -172,24 +171,11 @@ class Formsy extends React.Component {
     if (this.props.mapping) {
       return this.props.mapping(model);
     }
-    console.log('model is:', model);
-    return false;
-    // return formDataToObject.toObj(Object.keys(model).reduce((mappedModel, key) => {
-    //   const keyArray = key.split('.');
-    //   let base = mappedModel;
-    //   while (keyArray.length) {
-    //     const currentKey = keyArray.shift();
-    //     base = (base[currentKey] = keyArray.length ? base[currentKey] || {} : model[key]); // eslint-disable-line
-    //   }
-    //
-    //   return mappedModel;
-    // }, {}));
+    return model;
   }
 
   // Update model, submit to url prop and send the model
-  submit = (event) => {
-    event && event.preventDefault();
-
+  submit = () => {
     // Trigger form as not pristine.
     // If any inputs have not been touched yet this will make them dirty
     // so validation becomes visible (if based on isPristine)

@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-// import React from 'react';
 import Form from './components/Formsy';
+import Button from './components/Button';
 import withFormsy from './components/withFormsy';
 
-// const emptyArray = [];
 // const options = {};
 const Formsy = {};
 
 Formsy.Form = Form;
+Formsy.Button = Button;
 Formsy.withFormsy = withFormsy;
 Formsy.propTypes = {
   setValidations: PropTypes.func,

@@ -132,6 +132,8 @@ function withFormsy(Component) {
 
     showError = () => !this.showRequired() && !this.isValid();
 
+    isFormInvalid = () => !this.isValid() && !this.isPristine();
+
     isValidValue = value => this.context.formsy.isValidValue.call(null, this, value);
 
     render() {
