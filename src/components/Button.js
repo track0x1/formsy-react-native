@@ -2,26 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-native';
 
-function FormsyButton(props) {
-  if (!props.type || (props.type !== 'submit' && props.type !== 'reset')) {
-    throw new Error('You must provide a valid type prop to Formsy.Button (submit, reset).');
-  }
+class FormsyButton extends React.Component {
+  static displayName = 'Formsy.Button';
 
-  const onPressHandler = props.type === 'submit' ? this.context.formsy.submit : this.context.formsy.reset;
-  const injectedProps = {
-    ...props,
-    onPress: () => onPressHandler(),
+  static propTypes = {
+    type: PropTypes.string,
   };
 
-  return React.createElement(Button, injectedProps);
-}
+  static contextTypes = {
+    formsy: PropTypes.object,
+  };
 
-FormsyButton.displayName = 'Formsy.Button';
-FormsyButton.propTypes = {
-  type: PropTypes.string,
-};
-FormsyButton.contextTypes = {
-  formsy: PropTypes.object,
-};
+  constructor(props) {
+    super(props);
+    if (!props.type || (props.type !== 'submit' && props.type !== 'reset')) {
+      throw new Error('You must provide a valid type prop to Formsy.Button (submit, reset).');
+    }
+  }
+
+  render() {
+    const onPressHandler = this.props.type === 'submit' ? this.context.formsy.submit : this.context.formsy.reset;
+    const injectedProps = {
+      ...this.props,
+      onPress: () => onPressHandler(),
+    };
+    return React.createElement(Button, injectedProps);
+  }
+}
 
 export default FormsyButton;
