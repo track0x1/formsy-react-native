@@ -1,6 +1,6 @@
 {
   "name": "formsy-react-native",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A form input builder and validator for React-Native (based on formsy-react)",
   "main": "src/index.js",
   "directories": {
