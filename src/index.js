@@ -18,6 +18,7 @@ Formsy.propTypes = {
   getErrorMessage: PropTypes.func,
   getErrorMessages: PropTypes.func,
   isFormDisabled: PropTypes.func,
+  isFormInvalid: PropTypes.func,
   isValid: PropTypes.func,
   isPristine: PropTypes.func,
   isFormSubmitted: PropTypes.func,

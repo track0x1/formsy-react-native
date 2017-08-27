@@ -147,6 +147,7 @@ function withFormsy(Component) {
         getErrorMessage: this.getErrorMessage,
         getErrorMessages: this.getErrorMessages,
         isFormDisabled: this.isFormDisabled,
+        isFormInvalid: this.isFormInvalid,
         isValid: this.isValid,
         isPristine: this.isPristine,
         isFormSubmitted: this.isFormSubmitted,
