@@ -21,7 +21,7 @@ class Formsy extends React.Component {
     onValid: PropTypes.func,
     onValidSubmit: PropTypes.func,
     preventExternalInvalidation: PropTypes.bool,
-    validationErrors: PropTypes.node,
+    validationErrors: PropTypes.object,
   }
 
   static defaultProps = {
